@@ -20,14 +20,19 @@ int main(int argc, const char * argv[]) {
         Board *board = [[Board alloc] init];
         
         Player *player1 = [[Player alloc] init];
+        Player *player2 = [[Player alloc] init];
         
         while (!board.gameOver) {
-            int diceNumber = [board getDiceNumber];
-            
-            [board movePlayer:player1 withDiceNumber:diceNumber];
+            int player1DiceNumber = [player1 getDiceNumber];
+            [board movePlayer:player1 withDiceNumber:player1DiceNumber];
+            if (board.gameOver) continue;
+            int player2DiceNumber = [player2 getDiceNumber];
+            [board movePlayer:player2 withDiceNumber:player2DiceNumber];
         }
         
-        NSLog(@"YEAH! You win the game!");
+        
+        
+        
     }
     return 0;
 }

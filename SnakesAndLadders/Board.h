@@ -17,7 +17,6 @@
 @property (nonatomic, assign) BOOL gameOver;
 
 -(int)getGridSize;
--(int)getDiceNumber;
 -(void)movePlayer:(Player *)player withDiceNumber:(int)diceNumber;
 
 @end

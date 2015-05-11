@@ -60,16 +60,6 @@
     return size;
 }
 
--(int)getDiceNumber {
-    NSLog(@"Input your dice number:");
-    char str[100];
-    fgets(str, 100, stdin);
-    NSString *input = [NSString stringWithUTF8String:str];
-    int diceNumber = (int)[input integerValue];
-    NSLog(@"Dice number is %d", diceNumber);
-    return diceNumber;
-}
-
 -(void)movePlayer:(Player *)player withDiceNumber:(int)diceNumber {
     NSUInteger currentIndex;
     int totalSquares = (int)[_boardArray count];
@@ -78,8 +68,9 @@
         player.square = self.boardArray[diceNumber - 1];
     } else {
         currentIndex = [self.boardArray indexOfObject:player.square];
-        if (currentIndex + diceNumber > totalSquares) {
+        if (currentIndex + diceNumber > totalSquares - 1) {
             self.gameOver = YES;
+            NSLog(@"YEAH! You win the game!");
         } else {
             player.square = self.boardArray[currentIndex + diceNumber];
         }
@@ -97,6 +88,7 @@
         
         if (currentIndex + steps > totalSquares) {
             self.gameOver = YES;
+            NSLog(@"YEAH! You win the game!");
         } else {
             player.square = self.boardArray[currentIndex + steps];
         }

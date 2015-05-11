@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) Square *square;
 
+-(int)getDiceNumber;
+
 @end
