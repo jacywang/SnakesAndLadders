@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 JWANG. All rights reserved.
 //
 
+// Following features need to be added,
+// 1. Add another player
+// 2. Implement game difficulty E-easy, M-medium, H-hard
+
 #import <Foundation/Foundation.h>
 #import "Board.h"
 #import "Player.h"
