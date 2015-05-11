@@ -10,11 +10,11 @@
 
 @implementation Snake
 
--(instancetype)initWithGridSize:(int)size {
+-(instancetype)initWithSquareNumber:(int)squareNumber {
     self = [super self];
     
     if (self) {
-        _steps = - (arc4random_uniform(size * size - 1) + 1);
+        _steps = - (arc4random_uniform(squareNumber) + 1);
     }
     
     return self;

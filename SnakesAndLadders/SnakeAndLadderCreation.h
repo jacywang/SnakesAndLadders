@@ -10,6 +10,6 @@
 
 @protocol SnakeAndLadderCreation <NSObject>
 
--(instancetype)initWithGridSize:(int)size;
+-(instancetype)initWithSquareNumber:(int)squareNumber;
 
 @end

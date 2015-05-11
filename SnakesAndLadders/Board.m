@@ -8,6 +8,8 @@
 
 #import "Board.h"
 #import "Square.h"
+#import "Snake.h"
+#import "Ladder.h"
 
 @implementation Board
 
@@ -16,8 +18,24 @@
     
     if (self) {
         _board = [NSMutableArray array];
-        for (int i = 0; i < size * size; i++) {
+        
+        int totalSquares = size * size;
+        
+        int snakeSquareNumber = arc4random_uniform(totalSquares - 1) + 1;
+        int ladderSquareNumber = arc4random_uniform(totalSquares - 1) + 1;
+        while (ladderSquareNumber == snakeSquareNumber) {
+            ladderSquareNumber = arc4random_uniform(totalSquares - 1) + 1;
+        }
+        
+        for (int i = 0; i < totalSquares; i++) {
             _square = [[Square alloc] init];
+            
+            if (i == snakeSquareNumber) {
+                _square.delegate = [[Snake alloc] initWithSquareNumber:snakeSquareNumber];
+            } else if (i == ladderSquareNumber) {
+                _square.delegate = [[Ladder alloc] initWithSquareNumber:ladderSquareNumber];
+            }
+            
             [_board addObject:_square];
         }
     }

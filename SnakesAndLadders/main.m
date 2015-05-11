@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Board.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        
+        Board *board = [[Board alloc] initWithGridSize:4];
+        
+        NSLog(@"%@", board);
     }
     return 0;
 }
