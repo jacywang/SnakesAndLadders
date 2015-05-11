@@ -11,5 +11,6 @@
 @protocol SnakeAndLadderCreation <NSObject>
 
 -(instancetype)initWithSquareNumber:(int)squareNumber;
+-(int)steps;
 
 @end

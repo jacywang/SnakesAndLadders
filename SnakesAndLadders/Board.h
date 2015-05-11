@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 @class Square;
+@class Player;
 
 @interface Board : NSObject
 
-@property (nonatomic, strong) NSMutableArray *board;
+@property (nonatomic, strong) NSMutableArray *boardArray;
 @property (nonatomic, strong) Square *square;
+@property (nonatomic, assign) BOOL gameOver;
 
--(instancetype)initWithGridSize:(int)size;
+-(int)getGridSize;
+-(int)getDiceNumber;
+-(void)movePlayer:(Player *)player withDiceNumber:(int)diceNumber;
 
 @end

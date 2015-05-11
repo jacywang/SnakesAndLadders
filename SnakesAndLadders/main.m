@@ -8,13 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "Board.h"
+#import "Player.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        Board *board = [[Board alloc] initWithGridSize:4];
+        Board *board = [[Board alloc] init];
         
-        NSLog(@"%@", board);
+        Player *player1 = [[Player alloc] init];
+        
+        while (!board.gameOver) {
+            int diceNumber = [board getDiceNumber];
+            
+            [board movePlayer:player1 withDiceNumber:diceNumber];
+        }
+        
+        NSLog(@"YEAH! You win the game!");
     }
     return 0;
 }

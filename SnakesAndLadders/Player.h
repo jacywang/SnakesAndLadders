@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Square;
 
 @interface Player : NSObject
 
-@property (nonatomic, assign) int numberOfLives;
+@property (nonatomic, strong) Square *square;
 
 @end

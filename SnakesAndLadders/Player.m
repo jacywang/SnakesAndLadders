@@ -10,14 +10,4 @@
 
 @implementation Player
 
--(instancetype)init {
-    self = [super self];
-    
-    if (self) {
-        _numberOfLives = 2;
-    }
-    
-    return self;
-}
-
 @end

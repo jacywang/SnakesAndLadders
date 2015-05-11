@@ -20,4 +20,9 @@
     return self;
 }
 
+-(int)steps {
+    return _steps;
+}
+
+
 @end
